@@ -33,12 +33,17 @@ class TurnsController < ApplicationController
     image.write "#{Rails.root}/app/assets/images/output.jpg"
 
     render json: {
-      text: 'this is a test of the emergency BS system',
+      text: 'testing multiple attachments',
       attachments: [
-        fallback: 'Required plain-text summary of the attachment',
-        color: '#36a64f',
-        pretext: 'Optional text that appears above the attachment block',
-        image_url: "http://i.imgur.com/nuXsGVf.jpg"
+        {
+          fallback: 'Required plain-text summary of the attachment',
+          pretext: 'Optional text that appears above the attachment block',
+          image_url: "http://i.imgur.com/TiFUKzt.jpg"
+        },
+        {
+          fallback: 'Required plain-text summary of the attachment',
+          image_url: "http://i.imgur.com/VprlOnK.jpg"
+        }
       ]
     }
   end
