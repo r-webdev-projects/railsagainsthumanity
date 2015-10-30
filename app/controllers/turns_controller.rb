@@ -1,5 +1,5 @@
 class TurnsController < ApplicationController
-  before_action :set_turn, only: [:show, :edit, :update, :destroy]
+  before_action :set_turn, only: [:edit, :update, :destroy]
   skip_before_filter  :verify_authenticity_token
 
   # GET /turns
@@ -11,6 +11,9 @@ class TurnsController < ApplicationController
   # GET /turns/1
   # GET /turns/1.json
   def show
+    image = MiniMagick::Image.open("#{Rails.root}/app/assets/images/blank-white-card.jpg")
+    image.draw "text 50,50 'There is a problem with the asset path'"
+    image.write "#{Rails.root}/app/assets/images/output.jpg"
   end
 
   # GET /turns/new
@@ -26,7 +29,7 @@ class TurnsController < ApplicationController
   def test
     image = MiniMagick::Image.open("#{Rails.root}/app/assets/images/blank-white-card.jpg")
     image.draw "font Helvetica"
-    image.draw "text 100,100 'Works like magick!'"
+    image.draw "text 100,100 'LOOK I CAN MAKE MY OWN CARDS!'"
     image.write "#{Rails.root}/app/assets/images/output.jpg"
 
     render json: {
@@ -35,7 +38,7 @@ class TurnsController < ApplicationController
         fallback: 'Required plain-text summary of the attachment',
         color: '#36a64f',
         pretext: 'Optional text that appears above the attachment block',
-        image_url: "#{Rails.root}/public/assets/output.jpg"
+        image_url: "http://i.imgur.com/nuXsGVf.jpg"
       ]
     }
   end
