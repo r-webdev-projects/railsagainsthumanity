@@ -1,5 +1,6 @@
 class TurnsController < ApplicationController
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
+  skip_before_filter  :verify_authenticity_token
 
   # GET /turns
   # GET /turns.json
