@@ -37,7 +37,6 @@ class TurnsController < ApplicationController
       attachments: [
         {
           fallback: 'Required plain-text summary of the attachment',
-          pretext: 'Optional text that appears above the attachment block',
           image_url: "http://i.imgur.com/TiFUKzt.jpg"
         },
         {
