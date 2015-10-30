@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :turns
   resources :players
   resources :black_cards
   resources :white_cards
