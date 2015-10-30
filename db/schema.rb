@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030044504) do
+ActiveRecord::Schema.define(version: 20151030212558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151030044504) do
     t.integer  "blanks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "has_image"
   end
 
   create_table "players", force: :cascade do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151030044504) do
     t.string   "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "has_image"
   end
 
 end
