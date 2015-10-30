@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Black Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Blanks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @black_cards.each do |black_card| %>
+      <tr>
+        <td><%= black_card.text %></td>
+        <td><%= black_card.blanks %></td>
+        <td><%= link_to 'Show', black_card %></td>
+        <td><%= link_to 'Edit', edit_black_card_path(black_card) %></td>
+        <td><%= link_to 'Destroy', black_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Black card', new_black_card_path %>
