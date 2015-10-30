@@ -21,6 +21,13 @@ class TurnsController < ApplicationController
   def edit
   end
 
+  # GET /turns/test
+  def test
+    render json: {
+      text: 'this is a test of the emergency BS system'
+    }
+  end
+
   # POST /turns
   # POST /turns.json
   def create
