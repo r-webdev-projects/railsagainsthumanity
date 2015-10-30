@@ -24,8 +24,19 @@ class TurnsController < ApplicationController
 
   # GET /turns/test
   def test
+    image = MiniMagick::Image.open("#{Rails.root}/app/assets/images/blank-white-card.jpg")
+    image.draw "font Helvetica"
+    image.draw "text 100,100 'Works like magick!'"
+    image.write "#{Rails.root}/app/assets/images/output.jpg"
+
     render json: {
-      text: 'this is a test of the emergency BS system'
+      text: 'this is a test of the emergency BS system',
+      attachments: [
+        fallback: 'Required plain-text summary of the attachment',
+        color: '#36a64f',
+        pretext: 'Optional text that appears above the attachment block',
+        image_url: "#{Rails.root}/app/assets/images/output.jpg"
+      ]
     }
   end
 
