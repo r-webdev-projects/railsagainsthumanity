@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # resources :turns
   # resources :players
 
-  root 'turns#test'
+  post '/', to: 'turns#test', as: 'root'
 
 end
