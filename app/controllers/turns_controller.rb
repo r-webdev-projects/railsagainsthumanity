@@ -27,7 +27,7 @@ class TurnsController < ApplicationController
     image = MiniMagick::Image.open("#{Rails.root}/app/assets/images/blank-white-card.jpg")
     image.draw "font Helvetica"
     image.draw "text 100,100 'Works like magick!'"
-    image.write "#{Rails.root}/assets/images/output.jpg"
+    image.write "#{Rails.root}/app/assets/images/output.jpg"
 
     render json: {
       text: 'this is a test of the emergency BS system',
