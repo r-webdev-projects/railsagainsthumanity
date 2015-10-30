@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing White Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @white_cards.each do |white_card| %>
+      <tr>
+        <td><%= white_card.text %></td>
+        <td><%= link_to 'Show', white_card %></td>
+        <td><%= link_to 'Edit', edit_white_card_path(white_card) %></td>
+        <td><%= link_to 'Destroy', white_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New White card', new_white_card_path %>
