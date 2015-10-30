@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151030044504) do
 
   create_table "black_cards", force: :cascade do |t|
     t.string   "text"
+    t.string   "uid"
     t.integer  "blanks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20151030044504) do
 
   create_table "white_cards", force: :cascade do |t|
     t.string   "text"
+    t.string   "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

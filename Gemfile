@@ -4,10 +4,11 @@ ruby '2.2.1'
 gem 'rails', '4.2.4'
 gem 'pg'
 
-# Use SCSS for stylesheets
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'slim-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
